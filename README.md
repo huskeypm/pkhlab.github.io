@@ -11,7 +11,10 @@ http://pkhlab.sites.luc.edu/
 ssh pkhlab.sites.luc.edu
 ```
 
-## Images
+## Slideshow
+- See https://github.com/huskeypm/tablet_display/ for automated calendars, etc
+- New files to appear in slideshow should be numbered IMG_1.png etc
 ```
 scp *.png pkhlab.sites.luc.edu:/home/pkekeneshuskey/public_html/slideshow/
 ```
+- 
