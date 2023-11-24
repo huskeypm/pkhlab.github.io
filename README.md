@@ -18,4 +18,4 @@ ssh pkhlab.sites.luc.edu
 ```
 scp *.png pkhlab.sites.luc.edu:/home/pkekeneshuskey/public_html/slideshow/
 ```
-- 
+- Edit slideshow/slideshow.html
