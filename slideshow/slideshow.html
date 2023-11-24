@@ -130,41 +130,41 @@ img {vertical-align: middle;}
 <body>
 <!--
 <h2>Automatic Slideshow</h2>
-<p>Change image every 2 seconds:</p>
+<p>Change image every 3 seconds:</p>
 -->
     
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <div class="numbertext">1 / 8</div>
+  <div class="numbertext">1 / 10</div>
   <img src="IMG_1.jpg" style="width:100%">
   <div class="text"></div>
 </div>
 
 <!-- Pete's additions; be sure to increment 'dots' below -->
 <div class="mySlides fade">
-  <div class="numbertext">2 / 8</div>
+  <div class="numbertext">2 / 10</div>
   <img src="cal.png" style="width:100%">
   <div class="text">Weekly calendar</div>
 </div>
 
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 8</div>
+  <div class="numbertext">3 / 10</div>
   <img src="IMG_2.jpg" style="width:100%">
   <div class="text"></div>
 </div>
 
 <!-- Pete's additions; be sure to increment 'dots' below -->
 <div class="mySlides fade">
-  <div class="numbertext">4 / 8</div>
+  <div class="numbertext">4 / 10</div>
   <img src="weather.png" style="width:100%">
   <div class="text">Weather</div>
 </div>
 
 
 <div class="mySlides fade">
-  <div class="numbertext">5 / 8</div>
+  <div class="numbertext">5 / 10</div>
   <img src="IMG_3.jpg" style="width:100%">
   <div class="text"></div>
 </div>
@@ -172,13 +172,13 @@ img {vertical-align: middle;}
     
 <!-- Pete's additions; be sure to increment 'dots' below -->    
 <div class="mySlides fade">
-  <div class="numbertext">6 / 8</div>
+  <div class="numbertext">6 / 10</div>
   <img src="accounts.png" style="width:100%">
   <div class="text">Kids' accounts </div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">7 / 8</div>
+  <div class="numbertext">7 / 10</div>
   <img src="IMG_4.jpg" style="width:100%">
   <div class="text"></div>
 </div>
@@ -186,10 +186,26 @@ img {vertical-align: middle;}
 
 <!-- Pete's additions; be sure to increment 'dots' below -->
 <div class="mySlides fade">
-  <div class="numbertext">8 / 8</div>
+  <div class="numbertext">8 / 10</div>
   <img src="pkhcalendar.png" style="width:100%">
   <div class="text">PKH calendar </div>
 </div>
+
+<!-- Pete's additions; be sure to increment 'dots' below -->
+<div class="mySlides fade">
+  <div class="numbertext">9 / 10</div>
+  <img src="IMG_5.png" style="width:100%">
+  <div class="text"> </div>
+</div>
+
+<!-- Pete's additions; be sure to increment 'dots' below -->
+<div class="mySlides fade">
+  <div class="numbertext">10 / 10</div>
+  <img src="todo.png" style="width:100%">
+  <div class="text"> </div>
+</div>
+  
+  
 
 <a class="prev" onclick="plusSlides(-1)">❮</a>
 <a class="next" onclick="plusSlides(1)">❯</a>
@@ -199,6 +215,7 @@ img {vertical-align: middle;}
 
 <!-- one for each image PKH? -->
 <div style="text-align:center">
+  <span class="dot"></span>  <!-- 1 -->
   <span class="dot"></span>
   <span class="dot"></span>
   <span class="dot"></span>
@@ -206,7 +223,8 @@ img {vertical-align: middle;}
   <span class="dot"></span>
   <span class="dot"></span>
   <span class="dot"></span>
-  <span class="dot"></span>
+  <span class="dot"></span> 
+  <span class="dot"></span> <!--10-->
 </div>
 
 
@@ -251,8 +269,8 @@ function showSlides() {
   //dots[slideIndex-1].className += " active";    
 
 
-  let refreshMS = 4000 
-  setTimeout(showSlides, refreshMS); // Change image every 4 seconds
+  let refreshMS = 5000 
+  setTimeout(showSlides, refreshMS); // Change image every 5 seconds
 /* ====
   // restart counter (global)  
   if (slideIndex > slides.length) {slideIndex = 1}
