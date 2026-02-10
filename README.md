@@ -11,6 +11,8 @@ URL
 ```
 ssh pkhlab.sites.luc.edu
 ```
+## Cpanel
+- Instructions: [Evernote](https://www.evernote.com/client/web#/notebook/0fe90b78-9405-45f5-943e-560208639751/note/ed78c26f-92b2-48c3-9a65-d3cb68c3db98)
 
 ## Slideshow
 - See https://github.com/huskeypm/tablet_display/ for automated calendars, etc
