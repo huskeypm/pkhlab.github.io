@@ -1,26 +1,33 @@
 # Lab Website
 Github deployment found here: 
-- https://huskeypm.github.io/pkhlab.github.io/
+- [https://huskeypm.github.io/pkhlab.github.io/](https://huskeypm.github.io/pkhlab.github.io/)
 
-See .cpanel.yml for details on cpanel deployment, INCLUDING copying over needed files 
+See `.cpanel.yml` for details on cpanel deployment, INCLUDING copying over needed files 
 
 URL 
-- http://pkhlab.sites.luc.edu/
+- [http://pkhlab.sites.luc.edu/](http://pkhlab.sites.luc.edu/)
 
 ## ssh 
-```
+```bash
 ssh pkhlab.sites.luc.edu
 ```
 ## Cpanel
-- Instructions: [Evernote](https://www.evernote.com/client/web#/notebook/0fe90b78-9405-45f5-943e-560208639751/note/ed78c26f-92b2-48c3-9a65-d3cb68c3db98)
+
+* Instructions: [Evernote](https://www.evernote.com/client/web#/notebook/0fe90b78-9405-45f5-943e-560208639751/note/ed78c26f-92b2-48c3-9a65-d3cb68c3db98)
 
 ## Slideshow
-- See https://github.com/huskeypm/tablet_display/ for automated calendars, etc
-- New files to appear in slideshow should be numbered IMG_1.png etc
-```
+
+* See [https://github.com/huskeypm/tablet_display/](https://github.com/huskeypm/tablet_display/) for automated calendars, etc
+* New files to appear in slideshow should be numbered `IMG_1.png` etc
+
+```bash
 scp *.png pkhlab.sites.luc.edu:/home/pkekeneshuskey/public_html/slideshow/
+
 ```
-- Edit slideshow/slideshow.html
+
+* Edit `slideshow/slideshow.html`
 
 ## Todo
-- See [evernote](https://share.evernote.com/note/88fb1220-9484-06b8-ed2d-7ba2ccd964ef) 
+
+* See [evernote](https://share.evernote.com/note/88fb1220-9484-06b8-ed2d-7ba2ccd964ef)
+
