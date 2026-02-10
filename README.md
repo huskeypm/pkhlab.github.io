@@ -21,3 +21,6 @@ ssh pkhlab.sites.luc.edu
 scp *.png pkhlab.sites.luc.edu:/home/pkekeneshuskey/public_html/slideshow/
 ```
 - Edit slideshow/slideshow.html
+
+## Todo
+- See [evernote](https://share.evernote.com/note/88fb1220-9484-06b8-ed2d-7ba2ccd964ef) 
