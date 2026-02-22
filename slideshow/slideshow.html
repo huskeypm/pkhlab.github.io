@@ -1,259 +1,220 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta http-equiv="refresh" content="600">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  /* Base styles from your source  */
   * {box-sizing: border-box;}
-  body {font-family: Verdana, sans-serif; margin: 0;}
-  .mySlides {display: none;}
-  img {vertical-align: middle; width: 100%;}
-
+  body {font-family: Verdana, sans-serif; margin: 0; background-color: #000; color: white; overflow: hidden;}
+  
   .slideshow-container {
-    max-width: 1000px;
+    width: 100vw;
+    height: 100vh;
     position: relative;
     margin: auto;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-/* Caption text */
-  .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
+  .mySlides { display: none; width: 100%; height: 100%; text-align: center; }
+  
+  img {
     width: 100%;
-    text-align: center;
-    background-color: rgba(0,0,0,0.3); /* Added for readability */
+    height: 100%;
+    object-fit: contain; /* Keeps aspect ratio while fitting screen */
   }
 
-/* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
+  /* Fullscreen Button */
+  .fs-btn {
     position: absolute;
-    top: 0;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
   }
+  .fs-btn:hover { background: rgba(255, 255, 255, 0.4); }
 
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-    
-/*   Next & previous buttons */
+  /* Navigation Arrows */
   .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
-    margin-top: -22px;
-    padding: 16px;
+    margin-top: -30px;
+    padding: 20px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    font-size: 30px;
+    transition: 0.3s ease;
     user-select: none;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 10;
+    text-decoration: none;
   }
-/* On hover, add a black background color with a little bit see-through */
+
   .next { right: 0; border-radius: 3px 0 0 3px; }
-  .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+  .prev { left: 0; border-radius: 0 3px 3px 0; }
+  .prev:hover, .next:hover { background-color: rgba(0,0,0,0.7); }
 
+  .text {
+    color: #f2f2f2;
+    font-size: 20px;
+    padding: 15px;
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+  }
 
-/* Fading animation */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 14px;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .dot-container {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 15;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 3px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active { background-color: #fff; }
+
   .fade {
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
   }
-
 
   @keyframes fade {
-    from {opacity: .4}
+    from {opacity: .3}
     to {opacity: 1}
   }
-
-/* On smaller screens, decrease text size - not sure if still using 
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-*/
-
 </style>
 </head>
-<body>
+<body id="main-body">
 
-<div class="slideshow-container">
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 11</div>
-    <img src="IMG_1.jpg">
-    <div class="text"></div>
-  </div>
+<button class="fs-btn" onclick="toggleFullScreen()">⛶ Fullscreen</button>
 
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 11</div>
-    <img src="cal.png">
-    <div class="text">Weekly calendar</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 11</div>
-    <img src="IMG_2.jpg">
-    <div class="text"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">4 / 11</div>
-    <img src="weather.png">
-    <div class="text">Weather</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">5 / 11</div>
-    <img src="IMG_3.jpg">
-    <div class="text"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">6 / 11</div>
-    <img src="accounts.png">
-    <div class="text">Kids' accounts</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">7 / 11</div>
-    <img src="IMG_4.jpg">
-    <div class="text"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">8 / 11</div>
-    <img src="pkhcalendar.png">
-    <div class="text">PKH calendar</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">9 / 11</div>
-    <img src="IMG_5.png">
-    <div class="text"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">10 / 11</div>
-    <img src="todos.png">
-    <div class="text"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">11 / 11</div>
-    <img src="daily.png">
-    <div class="text"></div>
-  </div>
-
+<div class="slideshow-container" id="slides-target">
   <a class="prev" onclick="plusSlides(-1)">❮</a>
   <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  <div class="dot-container" id="dots-target"></div>
 </div>
-
-<br>
-
-<!-- one for each image PKH? -->
-<div style="text-align:center">
-  <span class="dot"></span><!-- 1 -->
-  <span class="dot"></span><span class="dot"></span>
-  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-  <span class="dot"></span><span class="dot"></span>
-</div>
-
 
 <script>
+const imageList = [
+  { src: "IMG_1.jpg", caption: "" },
+  { src: "cal.png",   caption: "Weekly calendar" },
+  { src: "IMG_2.jpg", caption: "" },
+  { src: "weather.png", caption: "Weather" },
+  { src: "IMG_3.jpg", caption: "" },
+  { src: "accounts.png", caption: "Kids' accounts" },
+  { src: "IMG_4.jpg", caption: "" },
+  { src: "pkhcalendar.png", caption: "PKH calendar" },
+  { src: "IMG_5.png", caption: "" },
+  { src: "todos.png", caption: "" },
+  { src: "daily.png", caption: "" }
+];
+
+const DISPLAY_TIME = 30000; 
 let slideIndex = 0;
 let timer;
 
-// Start the show 
-showSlides();
+function initSlideshow() {
+  const container = document.getElementById('slides-target');
+  const dotsTarget = document.getElementById('dots-target');
+  
+  imageList.forEach((imgObj, index) => {
+    const slideDiv = document.createElement('div');
+    slideDiv.className = "mySlides fade";
+    slideDiv.innerHTML = `
+      <div class="numbertext">${index + 1} / ${imageList.length}</div>
+      <img src="${imgObj.src}" onerror="this.parentElement.innerHTML='<div style=padding:100px>Image Load Error: ${imgObj.src}</div>';">
+      ${imgObj.caption ? `<div class="text">${imgObj.caption}</div>` : ''}
+    `;
+    container.appendChild(slideDiv);
+
+    const dotSpan = document.createElement('span');
+    dotSpan.className = "dot";
+    dotsTarget.appendChild(dotSpan);
+  });
+
+  showSlides(); 
+}
 
 function plusSlides(n) {
-  clearTimeout(timer); // Reset timer if user clicks manually
+  clearTimeout(timer);
   slideIndex += n;
-  showSlidesManually(); // This now calls the function that also handles cache busting
+  if (slideIndex >= imageList.length) { slideIndex = 0; }
+  if (slideIndex < 0) { slideIndex = imageList.length - 1; }
+  renderSlide(slideIndex);
 }
 
 function showSlides() {
-  let slides = document.getElementsByClassName("mySlides"); 
-  let dots = document.getElementsByClassName("dot");
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none"; 
-  }
-
-  // Logic for randomization 
-  let rand = Math.floor(Math.random() * slides.length);
-  
-  // SYNC FIX: Ensure global index matches the random selection
+  let rand = Math.floor(Math.random() * imageList.length);
   slideIndex = rand;
-   
-  // CACHE BUSTER: Force the browser to fetch the image again 
-  let img = slides[rand].getElementsByTagName('img')[0];
-  if (img) {
-      let baseSrc = img.src.split('?')[0];
-      img.src = baseSrc + "?t=" + new Date().getTime();
-  }
-
-  slides[rand].style.display = "block"; 
-
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", ""); 
-  }
-  dots[rand].className += " active"; 
-
-  timer = setTimeout(showSlides, 5000); 
+  renderSlide(slideIndex);
 }
 
-// Helper for manual navigation
-function showSlidesManually() {
+function renderSlide(index) {
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
 
-  if (slideIndex >= slides.length) {slideIndex = 0}
-  if (slideIndex < 0) {slideIndex = slides.length - 1}
-
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
-  }
-  
-  // MANUAL FIX: Add Cache Buster here too, so manual clicks also show fresh images
-  let img = slides[slideIndex].getElementsByTagName('img')[0];
-  if (img) {
-      let baseSrc = img.src.split('?')[0];
-      img.src = baseSrc + "?t=" + new Date().getTime();
-  }
-  
-  slides[slideIndex].style.display = "block";
-  
-  for (let i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  dots[slideIndex].className += " active";
-  
-  // Go back to auto-random mode after 5 seconds
-  timer = setTimeout(showSlides, 5000);
+
+  let img = slides[index].querySelector('img');
+  if (img && img.tagName === 'IMG') {
+    let baseSrc = img.src.split('?')[0];
+    img.src = baseSrc + "?t=" + new Date().getTime();
+  }
+
+  slides[index].style.display = "block";
+  dots[index].className += " active";
+  timer = setTimeout(showSlides, DISPLAY_TIME);
 }
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+initSlideshow();
 </script>
 
 </body>
 </html>
-
 
